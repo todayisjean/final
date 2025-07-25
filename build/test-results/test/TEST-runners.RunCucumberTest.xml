@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="runners.RunCucumberTest" tests="9" skipped="0" failures="1" errors="0" timestamp="2025-07-23T09:19:05.008Z" hostname="JEANNEHUANG" time="140.364">
+  <properties/>
+  <testcase name="Successful login with valid credentials" classname="runners.RunCucumberTest" time="125.085">
+    <failure message="io.cucumber.junit.platform.engine.UndefinedStepException: The step 'I click the login button v' is undefined.&#10;You can implement this step using the snippet(s) below:&#10;&#10;@When(&quot;I click the login button v&quot;)&#10;public void i_click_the_login_button_v() {&#10;    // Write code here that turns the phrase above into concrete actions&#10;    throw new io.cucumber.java.PendingException();&#10;}&#10;" type="io.cucumber.junit.platform.engine.UndefinedStepException">io.cucumber.junit.platform.engine.UndefinedStepException: The step 'I click the login button v' is undefined.
+You can implement this step using the snippet(s) below:
+
+@When(&quot;I click the login button v&quot;)
+public void i_click_the_login_button_v() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+	at ✽.I click the login button v(classpath:features/login.feature:10)
+</failure>
+  </testcase>
+  <testcase name="Failed login with invalid password" classname="runners.RunCucumberTest" time="3.277"/>
+  <testcase name="Failed login with empty credentials" classname="runners.RunCucumberTest" time="2.83"/>
+  <testcase name="Create a new user" classname="runners.RunCucumberTest" time="2.022"/>
+  <testcase name="Example #1.1" classname="runners.RunCucumberTest" time="1.272"/>
+  <testcase name="Example #1.2" classname="runners.RunCucumberTest" time="1.152"/>
+  <testcase name="Update user information" classname="runners.RunCucumberTest" time="1.355"/>
+  <testcase name="Delete a user" classname="runners.RunCucumberTest" time="1.86"/>
+  <testcase name="Attempt to create user with invalid data" classname="runners.RunCucumberTest" time="1.363"/>
+  <system-out><![CDATA[
+Scenario: Successful login with valid credentials  ?[90m# features/login.feature:6?[0m
+  ?[32mGiven ?[0m?[32mI am on the login page?[0m                     ?[90m# stepdefs.LoginSteps.i_am_on_the_login_page()?[0m
+  ?[32mWhen ?[0m?[32mI enter ?[0m?[32m?[1m"standard_user"?[0m?[32m in the email field?[0m  ?[90m# stepdefs.LoginSteps.i_enter_in_the_email_field(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mI enter ?[0m?[32m?[1m"secret_sauce"?[0m?[32m in the password field?[0m ?[90m# stepdefs.LoginSteps.i_enter_in_the_password_field(java.lang.String)?[0m
+  ?[33mAnd ?[0m?[33mI click the login button v?[0m
+  ?[36mThen ?[0m?[36mI should be redirected to the dashboard?[0m     ?[90m# stepdefs.LoginSteps.i_should_be_redirected_to_the_dashboard()?[0m
+  ?[36mAnd ?[0m?[36mI should see a title text ?[0m?[36m?[1m"Products"?[0m         ?[90m# stepdefs.LoginSteps.i_should_see_a_welcome_message_containing(java.lang.String)?[0m
+
+Scenario: Failed login with invalid password                                                                     ?[90m# features/login.feature:14?[0m
+  ?[32mGiven ?[0m?[32mI am on the login page?[0m                                                                                   ?[90m# stepdefs.LoginSteps.i_am_on_the_login_page()?[0m
+  ?[32mWhen ?[0m?[32mI enter ?[0m?[32m?[1m"testuser@example.com"?[0m?[32m in the email field?[0m                                                         ?[90m# stepdefs.LoginSteps.i_enter_in_the_email_field(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mI enter ?[0m?[32m?[1m"wrongPassword"?[0m?[32m in the password field?[0m                                                              ?[90m# stepdefs.LoginSteps.i_enter_in_the_password_field(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mI click the login button?[0m                                                                                   ?[90m# stepdefs.LoginSteps.i_click_the_login_button()?[0m
+  ?[32mThen ?[0m?[32mI should see an error message ?[0m?[32m?[1m"Epic sadface: Username and password do not match any user in this service"?[0m ?[90m# stepdefs.LoginSteps.i_should_see_an_error_message(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mI should remain on the login page?[0m                                                                          ?[90m# stepdefs.LoginSteps.i_should_remain_on_the_login_page()?[0m
+
+Scenario: Failed login with empty credentials                             ?[90m# features/login.feature:22?[0m
+  ?[32mGiven ?[0m?[32mI am on the login page?[0m                                            ?[90m# stepdefs.LoginSteps.i_am_on_the_login_page()?[0m
+  ?[32mWhen ?[0m?[32mI leave the email field empty?[0m                                      ?[90m# stepdefs.LoginSteps.i_leave_the_email_field_empty()?[0m
+  ?[32mAnd ?[0m?[32mI leave the password field empty?[0m                                    ?[90m# stepdefs.LoginSteps.i_leave_the_password_field_empty()?[0m
+  ?[32mAnd ?[0m?[32mI click the login button?[0m                                            ?[90m# stepdefs.LoginSteps.i_click_the_login_button()?[0m
+  ?[32mThen ?[0m?[32mI should see an error message ?[0m?[32m?[1m"Epic sadface: Username is required"?[0m ?[90m# stepdefs.LoginSteps.i_should_see_an_error_message(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mI should remain on the login page?[0m                                   ?[90m# stepdefs.LoginSteps.i_should_remain_on_the_login_page()?[0m
+
+Scenario: Create a new user                                 ?[90m# features/usermanagement.feature:11?[0m
+  ?[32mGiven ?[0m?[32mthe API base URL is ?[0m?[32m?[1m"https://reqres.in/api"?[0m         ?[90m# stepdefs.UserManagementSteps.api_baseurl(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mI set the ?[0m?[32m?[1m"Content-Type"?[0m?[32m header to ?[0m?[32m?[1m"application/json"?[0m ?[90m# stepdefs.UserManagementSteps.setHeader(java.lang.String,java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mI set the ?[0m?[32m?[1m"x-api-key"?[0m?[32m header to ?[0m?[32m?[1m"reqres-free-v1"?[0m      ?[90m# stepdefs.UserManagementSteps.setHeader(java.lang.String,java.lang.String)?[0m
+  ?[32mGiven ?[0m?[32mI have the following user data:?[0m                     ?[90m# stepdefs.UserManagementSteps.setUserData(io.cucumber.datatable.DataTable)?[0m
+    | name | Michael Lawson |
+    | job  | IT             |
+  ?[32mWhen ?[0m?[32mI send a POST request to ?[0m?[32m?[1m"/users"?[0m?[32m with the user data?[0m ?[90m# stepdefs.UserManagementSteps.sendPostRequest(java.lang.String)?[0m
+  ?[32mThen ?[0m?[32mthe response status code should be ?[0m?[32m?[1m201?[0m               ?[90m# stepdefs.UserManagementSteps.verifyStatusCode(int)?[0m
+  ?[32mAnd ?[0m?[32mthe response should contain a valid user ID?[0m           ?[90m# stepdefs.UserManagementSteps.verifyValidUser()?[0m
+  ?[32mAnd ?[0m?[32mthe response should match the JSON schema:?[0m            ?[90m# stepdefs.UserManagementSteps.the_response_should_match_the_json_schema(java.lang.String)?[0m
+    """
+    {
+      "type": "object",
+      "required": ["job", "name"],
+      "properties": {
+        "job": {"type": "string"},
+        "name": {"type": "string"},
+      }
+    }
+    """
+
+Scenario Outline: Retrieve user information                 ?[90m# features/usermanagement.feature:45?[0m
+  ?[32mGiven ?[0m?[32mthe API base URL is ?[0m?[32m?[1m"https://reqres.in/api"?[0m         ?[90m# stepdefs.UserManagementSteps.api_baseurl(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mI set the ?[0m?[32m?[1m"Content-Type"?[0m?[32m header to ?[0m?[32m?[1m"application/json"?[0m ?[90m# stepdefs.UserManagementSteps.setHeader(java.lang.String,java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mI set the ?[0m?[32m?[1m"x-api-key"?[0m?[32m header to ?[0m?[32m?[1m"reqres-free-v1"?[0m      ?[90m# stepdefs.UserManagementSteps.setHeader(java.lang.String,java.lang.String)?[0m
+  ?[32mGiven ?[0m?[32ma user exists with ID ?[0m?[32m?[1m"7"?[0m                           ?[90m# stepdefs.UserManagementSteps.userExist(java.lang.String)?[0m
+  ?[32mWhen ?[0m?[32mI send a GET request to ?[0m?[32m?[1m"/users/7"?[0m                   ?[90m# stepdefs.UserManagementSteps.sendGetRequest(java.lang.String)?[0m
+  ?[32mThen ?[0m?[32mthe response status code should be ?[0m?[32m?[1m200?[0m               ?[90m# stepdefs.UserManagementSteps.verifyStatusCode(int)?[0m
+  ?[32mAnd ?[0m?[32mthe response body should contain:?[0m                     ?[90m# stepdefs.UserManagementSteps.verifyBody(java.lang.String)?[0m
+    """
+    {
+      "id": "7",
+      "firstName": "Michael",
+      "lastName": "Lawson"
+    }
+    """
+
+Scenario Outline: Retrieve user information                 ?[90m# features/usermanagement.feature:46?[0m
+  ?[32mGiven ?[0m?[32mthe API base URL is ?[0m?[32m?[1m"https://reqres.in/api"?[0m         ?[90m# stepdefs.UserManagementSteps.api_baseurl(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mI set the ?[0m?[32m?[1m"Content-Type"?[0m?[32m header to ?[0m?[32m?[1m"application/json"?[0m ?[90m# stepdefs.UserManagementSteps.setHeader(java.lang.String,java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mI set the ?[0m?[32m?[1m"x-api-key"?[0m?[32m header to ?[0m?[32m?[1m"reqres-free-v1"?[0m      ?[90m# stepdefs.UserManagementSteps.setHeader(java.lang.String,java.lang.String)?[0m
+  ?[32mGiven ?[0m?[32ma user exists with ID ?[0m?[32m?[1m"7"?[0m                           ?[90m# stepdefs.UserManagementSteps.userExist(java.lang.String)?[0m
+  ?[32mWhen ?[0m?[32mI send a GET request to ?[0m?[32m?[1m"/users/7"?[0m                   ?[90m# stepdefs.UserManagementSteps.sendGetRequest(java.lang.String)?[0m
+  ?[32mThen ?[0m?[32mthe response status code should be ?[0m?[32m?[1m200?[0m               ?[90m# stepdefs.UserManagementSteps.verifyStatusCode(int)?[0m
+  ?[32mAnd ?[0m?[32mthe response body should contain:?[0m                     ?[90m# stepdefs.UserManagementSteps.verifyBody(java.lang.String)?[0m
+    """
+    {
+      "id": "7",
+      "firstName": "Michael",
+      "lastName": "Lawson"
+    }
+    """
+
+Scenario: Update user information                                ?[90m# features/usermanagement.feature:48?[0m
+  ?[32mGiven ?[0m?[32mthe API base URL is ?[0m?[32m?[1m"https://reqres.in/api"?[0m              ?[90m# stepdefs.UserManagementSteps.api_baseurl(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mI set the ?[0m?[32m?[1m"Content-Type"?[0m?[32m header to ?[0m?[32m?[1m"application/json"?[0m      ?[90m# stepdefs.UserManagementSteps.setHeader(java.lang.String,java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mI set the ?[0m?[32m?[1m"x-api-key"?[0m?[32m header to ?[0m?[32m?[1m"reqres-free-v1"?[0m           ?[90m# stepdefs.UserManagementSteps.setHeader(java.lang.String,java.lang.String)?[0m
+  ?[32mGiven ?[0m?[32ma user exists with ID ?[0m?[32m?[1m"2"?[0m                                ?[90m# stepdefs.UserManagementSteps.userExist(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mI have the following update data:?[0m                          ?[90m# stepdefs.UserManagementSteps.setUpdateData(java.util.Map<java.lang.String, java.lang.String>)?[0m
+    | name | Jonathan   |
+    | job  | Office Boy |
+  ?[32mWhen ?[0m?[32mI send a PATCH request to ?[0m?[32m?[1m"/users/2"?[0m?[32m with the update data?[0m ?[90m# stepdefs.UserManagementSteps.i_send_a_patch_request_to_with_the_update_data(java.lang.String)?[0m
+  ?[32mThen ?[0m?[32mthe response status code should be ?[0m?[32m?[1m200?[0m                    ?[90m# stepdefs.UserManagementSteps.verifyStatusCode(int)?[0m
+  ?[32mAnd ?[0m?[32mthe response body should contain:?[0m                          ?[90m# stepdefs.UserManagementSteps.verifyBody(java.lang.String)?[0m
+    """
+    {
+      "name": "Jonathan",
+      "job": "Office Boy"
+    }
+    """
+
+Scenario: Delete a user                                     ?[90m# features/usermanagement.feature:63?[0m
+  ?[32mGiven ?[0m?[32mthe API base URL is ?[0m?[32m?[1m"https://reqres.in/api"?[0m         ?[90m# stepdefs.UserManagementSteps.api_baseurl(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mI set the ?[0m?[32m?[1m"Content-Type"?[0m?[32m header to ?[0m?[32m?[1m"application/json"?[0m ?[90m# stepdefs.UserManagementSteps.setHeader(java.lang.String,java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mI set the ?[0m?[32m?[1m"x-api-key"?[0m?[32m header to ?[0m?[32m?[1m"reqres-free-v1"?[0m      ?[90m# stepdefs.UserManagementSteps.setHeader(java.lang.String,java.lang.String)?[0m
+  ?[32mGiven ?[0m?[32ma user exists with ID ?[0m?[32m?[1m"23"?[0m                          ?[90m# stepdefs.UserManagementSteps.userExist(java.lang.String)?[0m
+  ?[32mWhen ?[0m?[32mI send a DELETE request to ?[0m?[32m?[1m"/users/23"?[0m               ?[90m# stepdefs.UserManagementSteps.sendDeleteRequest(java.lang.String)?[0m
+  ?[32mThen ?[0m?[32mthe response status code should be ?[0m?[32m?[1m204?[0m               ?[90m# stepdefs.UserManagementSteps.verifyStatusCode(int)?[0m
+  ?[32mAnd ?[0m?[32ma GET request to ?[0m?[32m?[1m"/users/23"?[0m?[32m should return ?[0m?[32m?[1m404?[0m        ?[90m# stepdefs.UserManagementSteps.a_get_request_to_should_return(java.lang.String,java.lang.Integer)?[0m
+
+Scenario: Attempt to create user with invalid data                ?[90m# features/usermanagement.feature:69?[0m
+  ?[32mGiven ?[0m?[32mthe API base URL is ?[0m?[32m?[1m"https://reqres.in/api"?[0m               ?[90m# stepdefs.UserManagementSteps.api_baseurl(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mI set the ?[0m?[32m?[1m"Content-Type"?[0m?[32m header to ?[0m?[32m?[1m"application/json"?[0m       ?[90m# stepdefs.UserManagementSteps.setHeader(java.lang.String,java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mI set the ?[0m?[32m?[1m"x-api-key"?[0m?[32m header to ?[0m?[32m?[1m"reqres-free-v1"?[0m            ?[90m# stepdefs.UserManagementSteps.setHeader(java.lang.String,java.lang.String)?[0m
+  ?[32mGiven ?[0m?[32mI have the following invalid user data:?[0m                   ?[90m# stepdefs.UserManagementSteps.setInvalidUserData(java.util.Map<java.lang.String, java.lang.String>)?[0m
+    | fullName | Michael Lawson |
+    | jeb      | IT             |
+  ?[32mWhen ?[0m?[32mI send a POST request to ?[0m?[32m?[1m"/register"?[0m?[32m with the invalid data?[0m ?[90m# stepdefs.UserManagementSteps.i_send_a_post_request_to_with_the_invalid_data(java.lang.String)?[0m
+  ?[32mThen ?[0m?[32mthe response status code should be ?[0m?[32m?[1m400?[0m                     ?[90m# stepdefs.UserManagementSteps.verifyStatusCode(int)?[0m
+  ?[32mAnd ?[0m?[32mthe response should contain validation errors:?[0m              ?[90m# stepdefs.UserManagementSteps.the_response_should_contain_validation_errors(io.cucumber.datatable.DataTable)?[0m
+    | error | Missing password |
+]]></system-out>
+  <system-err><![CDATA[Jul 23, 2025 4:21:07 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 138, returning the closest version; found: 137; Please update to a Selenium version that supports CDP version 138
+Jul 23, 2025 4:21:10 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 138, returning the closest version; found: 137; Please update to a Selenium version that supports CDP version 138
+Jul 23, 2025 4:21:14 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 138, returning the closest version; found: 137; Please update to a Selenium version that supports CDP version 138
+Jul 23, 2025 4:21:18 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 138, returning the closest version; found: 137; Please update to a Selenium version that supports CDP version 138
+Jul 23, 2025 4:21:19 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 138, returning the closest version; found: 137; Please update to a Selenium version that supports CDP version 138
+Jul 23, 2025 4:21:20 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 138, returning the closest version; found: 137; Please update to a Selenium version that supports CDP version 138
+Jul 23, 2025 4:21:21 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 138, returning the closest version; found: 137; Please update to a Selenium version that supports CDP version 138
+Jul 23, 2025 4:21:23 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 138, returning the closest version; found: 137; Please update to a Selenium version that supports CDP version 138
+Jul 23, 2025 4:21:25 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find an exact match for CDP version 138, returning the closest version; found: 137; Please update to a Selenium version that supports CDP version 138
+]]></system-err>
+</testsuite>

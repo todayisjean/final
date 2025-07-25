@@ -1,0 +1,62 @@
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.11.2' // Use the latest stable version
+
+}
+// Define the version of Allure you want to use via the allureVersion property
+def allureVersion = "2.25.0"
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+
+allure {
+    version = '2.24.0' // Check for latest Allure version
+    autoconfigure = true
+
+    useJUnit5 {
+        version = '2.24.0' // Allure JUnit5 adapter version
+    }
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.12.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-engine:1.12.2'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.12.2'
+
+    testImplementation platform('io.cucumber:cucumber-bom:7.23.0') // Use the latest stable version
+    testImplementation 'io.cucumber:cucumber-junit-platform-engine'
+    testImplementation 'org.junit.platform:junit-platform-suite' // For running suites
+    testImplementation 'io.cucumber:cucumber-java' // If using Java for glue code
+
+    testImplementation 'org.seleniumhq.selenium:selenium-java:4.33.0'
+    // Import allure-bom to ensure correct versions of all the dependencies are used
+    testImplementation platform("io.qameta.allure:allure-bom:$allureVersion")
+    // Add necessary Allure dependencies to dependencies section
+    testImplementation "io.qameta.allure:allure-junit5"
+
+    // define a BOM and its version
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:5.1.0"))
+
+    // define any required OkHttp artifacts without version
+    implementation("com.squareup.okhttp3:okhttp")
+    implementation("com.squareup.okhttp3:logging-interceptor")
+    implementation 'com.google.code.gson:gson:2.13.1'
+
+}
+
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
+
+    }
+}
+
+test {
+    useJUnitPlatform()
+    systemProperties 'allure.results.directory': "${buildDir}/allure-results"
+}
