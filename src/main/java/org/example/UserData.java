@@ -1,20 +1,12 @@
 package org.example;
 
-class Data{
-    public int id;
-    public String email;
-    public String first_name;
-    public String last_name;
-    public String avatar;
-}
+import java.util.Date;
 
 public class UserData{
-    public Data data;
-    public Support support;
+    public String id;
+    public String firstName;
+    public String lastName;
+    public String email;
+    public Date registerDate;
+    public Date updatedDate;
 }
-
-class Support{
-    public String url;
-    public String text;
-}
-

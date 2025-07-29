@@ -43,9 +43,9 @@ dependencies {
     implementation(platform("com.squareup.okhttp3:okhttp-bom:5.1.0"))
 
     // define any required OkHttp artifacts without version
-    implementation("com.squareup.okhttp3:okhttp")
-    implementation("com.squareup.okhttp3:logging-interceptor")
     implementation 'com.google.code.gson:gson:2.13.1'
+    testImplementation 'io.rest-assured:json-path:5.5.5'
+    testImplementation 'io.rest-assured:rest-assured:5.5.5' // Use the latest stable version
 
 }
 
