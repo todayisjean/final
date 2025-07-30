@@ -1,3 +1,4 @@
+@api
 Feature: User Management API
   As an API consumer
   I want to interact with the user management endpoints

@@ -60,3 +60,15 @@ test {
     useJUnitPlatform()
     systemProperties 'allure.results.directory': "${buildDir}/allure-results"
 }
+
+tasks.register('apiTest', Test) {
+    useJUnitPlatform {
+        includeTags 'api'
+    }
+}
+
+tasks.register('webTest', Test) {
+    useJUnitPlatform {
+        includeTags 'web'
+    }
+}

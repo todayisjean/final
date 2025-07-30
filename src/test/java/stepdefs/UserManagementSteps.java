@@ -10,6 +10,7 @@ import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import org.example.UserData;
+import org.junit.jupiter.api.Tag;
 import util.ContextManager;
 
 import java.io.IOException;
@@ -19,7 +20,7 @@ import java.util.*;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.emptyOrNullString;
 import static org.junit.jupiter.api.Assertions.*;
-
+@Tag("api")
 public class UserManagementSteps {
     private final Type jsonToMapType = new TypeToken<Map<String, String>>() {
     }.getType();
