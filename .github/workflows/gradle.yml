@@ -8,8 +8,16 @@
 name: Java CI with Gradle
 
 on:
-  push:
-    branches: [ "master" ]
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
+      environment:
+        description: 'Environment to deploy'
+        required: false
+        default: 'staging'
   pull_request:
     branches: [ "master" ]
 
