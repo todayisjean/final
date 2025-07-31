@@ -22,7 +22,7 @@ public class LoginSteps {
 
     public LoginSteps() {
         driver = DriverManager.getDriver();
-        page = new LoginPage();
+        page = new LoginPage(driver);
     }
 
     @Given("I am on the login page")

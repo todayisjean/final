@@ -28,3 +28,4 @@ Feature: User Login
     Then I should see an error message "Epic sadface: Username is required"
     And I should remain on the login page
 
+  Scenario: Checkout

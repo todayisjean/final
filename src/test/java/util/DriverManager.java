@@ -10,7 +10,7 @@ public class DriverManager {
     public static WebDriver getDriver() {
         if(_driver == null) {
             var option = new ChromeOptions();
-            option.addArguments("headless");
+//            option.addArguments("headless");
             _driver = new ChromeDriver(option);
         }
         return _driver;
